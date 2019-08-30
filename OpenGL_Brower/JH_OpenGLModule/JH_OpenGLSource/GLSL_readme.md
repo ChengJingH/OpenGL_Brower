@@ -39,6 +39,9 @@ uniform变量一般用来表示：变换矩阵，材质，光照参数和颜色�
     {
         gl_FragColor = texture2D(colorMaps,varyTextCoordinate);
     }
+    
+参考资料    
+https://blog.csdn.net/hgl868/article/details/7846269
 
 # 纹理
 

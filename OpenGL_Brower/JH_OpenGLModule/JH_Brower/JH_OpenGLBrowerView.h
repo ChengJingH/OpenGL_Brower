@@ -1,22 +1,18 @@
 //
-//  CJ_OpenGLBrowerView.h
+//  JH_OpenGLBrowerView.h
 //  OpenGL_Brower
 //
-//  Created by walen on 2019/8/12.
+//  Created by walen on 2019/8/28.
 //  Copyright © 2019 CJH. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "JH_OpenGLView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JH_OpenGLBrowerView : UIView
+@interface JH_OpenGLBrowerView : JH_OpenGLView
 
 @property (nonatomic,assign)GLfloat currentViewDistant;
-
-//渲染
-- (void)renderGLView;
-
 
 @end
 

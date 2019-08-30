@@ -7,16 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E81261F22317A37A008B66F0 /* FragmentDraw.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E81261F02317A37A008B66F0 /* FragmentDraw.glsl */; };
+		E81261F32317A37A008B66F0 /* VertexDraw.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E81261F12317A37A008B66F0 /* VertexDraw.glsl */; };
+		E84093F523152849004E5DA2 /* JH_OpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = E84093F323152849004E5DA2 /* JH_OpenGLView.m */; };
+		E84093F8231528E2004E5DA2 /* JHBrowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84093F7231528E2004E5DA2 /* JHBrowerViewController.m */; };
+		E84093FB231528F0004E5DA2 /* JHDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84093FA231528F0004E5DA2 /* JHDrawViewController.m */; };
+		E840940223152B1F004E5DA2 /* Fragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E840940023152B1F004E5DA2 /* Fragment.glsl */; };
+		E840940323152B1F004E5DA2 /* Vertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E840940123152B1F004E5DA2 /* Vertex.glsl */; };
+		E840940623152CEA004E5DA2 /* JH_OpenGLEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = E840940523152CEA004E5DA2 /* JH_OpenGLEffect.m */; };
+		E8D2B0ED23165B4B002712BD /* JH_OpenGLBrowerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2B0EC23165B4B002712BD /* JH_OpenGLBrowerView.m */; };
+		E8D2B0F023165B61002712BD /* JH_OpenGLDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2B0EF23165B61002712BD /* JH_OpenGLDrawView.m */; };
+		E8D2B0F323166D35002712BD /* JHDrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8D2B0F223166D35002712BD /* JHDrawViewController.xib */; };
 		E8E5DAF22301039500C5BC17 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E5DAF12301039500C5BC17 /* OpenGLES.framework */; };
 		E8F86D77231113B4007CBCE2 /* OpenGL_Texture.png in Resources */ = {isa = PBXBuildFile; fileRef = E8F86D5F231113B4007CBCE2 /* OpenGL_Texture.png */; };
 		E8F86D78231113B4007CBCE2 /* timg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E8F86D60231113B4007CBCE2 /* timg.jpeg */; };
 		E8F86D79231113B4007CBCE2 /* Matrix_readme.md in Resources */ = {isa = PBXBuildFile; fileRef = E8F86D61231113B4007CBCE2 /* Matrix_readme.md */; };
 		E8F86D7A231113B4007CBCE2 /* GLSL_readme.md in Resources */ = {isa = PBXBuildFile; fileRef = E8F86D62231113B4007CBCE2 /* GLSL_readme.md */; };
-		E8F86D7B231113B4007CBCE2 /* Fragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E8F86D63231113B4007CBCE2 /* Fragment.glsl */; };
 		E8F86D7C231113B4007CBCE2 /* OpenGL_CS.png in Resources */ = {isa = PBXBuildFile; fileRef = E8F86D65231113B4007CBCE2 /* OpenGL_CS.png */; };
-		E8F86D7D231113B4007CBCE2 /* Vertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E8F86D67231113B4007CBCE2 /* Vertex.glsl */; };
-		E8F86D7E231113B5007CBCE2 /* JH_OpenGLBrowerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F86D6A231113B4007CBCE2 /* JH_OpenGLBrowerView.m */; };
-		E8F86D7F231113B5007CBCE2 /* JH_AttributeManage.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F86D6B231113B4007CBCE2 /* JH_AttributeManage.m */; };
 		E8F86D80231113B5007CBCE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8F86D6D231113B4007CBCE2 /* Assets.xcassets */; };
 		E8F86D81231113B5007CBCE2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F86D6E231113B4007CBCE2 /* ViewController.m */; };
 		E8F86D82231113B5007CBCE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8F86D6F231113B4007CBCE2 /* LaunchScreen.storyboard */; };
@@ -26,6 +33,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E81261F02317A37A008B66F0 /* FragmentDraw.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FragmentDraw.glsl; sourceTree = "<group>"; };
+		E81261F12317A37A008B66F0 /* VertexDraw.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VertexDraw.glsl; sourceTree = "<group>"; };
+		E84093F323152849004E5DA2 /* JH_OpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JH_OpenGLView.m; sourceTree = "<group>"; };
+		E84093F423152849004E5DA2 /* JH_OpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JH_OpenGLView.h; sourceTree = "<group>"; };
+		E84093F6231528E2004E5DA2 /* JHBrowerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHBrowerViewController.h; sourceTree = "<group>"; };
+		E84093F7231528E2004E5DA2 /* JHBrowerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHBrowerViewController.m; sourceTree = "<group>"; };
+		E84093F9231528F0004E5DA2 /* JHDrawViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHDrawViewController.h; sourceTree = "<group>"; };
+		E84093FA231528F0004E5DA2 /* JHDrawViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHDrawViewController.m; sourceTree = "<group>"; };
+		E84093FE23152B1F004E5DA2 /* JH_BrowerAttributeMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JH_BrowerAttributeMesh.h; sourceTree = "<group>"; };
+		E84093FF23152B1F004E5DA2 /* JH_AttributeStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JH_AttributeStruct.h; sourceTree = "<group>"; };
+		E840940023152B1F004E5DA2 /* Fragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fragment.glsl; sourceTree = "<group>"; };
+		E840940123152B1F004E5DA2 /* Vertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vertex.glsl; sourceTree = "<group>"; };
+		E840940423152CEA004E5DA2 /* JH_OpenGLEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JH_OpenGLEffect.h; sourceTree = "<group>"; };
+		E840940523152CEA004E5DA2 /* JH_OpenGLEffect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JH_OpenGLEffect.m; sourceTree = "<group>"; };
+		E8D2B0EB23165B4B002712BD /* JH_OpenGLBrowerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JH_OpenGLBrowerView.h; sourceTree = "<group>"; };
+		E8D2B0EC23165B4B002712BD /* JH_OpenGLBrowerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JH_OpenGLBrowerView.m; sourceTree = "<group>"; };
+		E8D2B0EE23165B61002712BD /* JH_OpenGLDrawView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JH_OpenGLDrawView.h; sourceTree = "<group>"; };
+		E8D2B0EF23165B61002712BD /* JH_OpenGLDrawView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JH_OpenGLDrawView.m; sourceTree = "<group>"; };
+		E8D2B0F123165D6E002712BD /* JH_Configure.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JH_Configure.pch; sourceTree = "<group>"; };
+		E8D2B0F223166D35002712BD /* JHDrawViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JHDrawViewController.xib; sourceTree = "<group>"; };
 		E8E5DAD32300FA6500C5BC17 /* OpenGL_Brower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGL_Brower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E5DAF12301039500C5BC17 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		E8F86D5C231113B4007CBCE2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,15 +60,7 @@
 		E8F86D60231113B4007CBCE2 /* timg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timg.jpeg; sourceTree = "<group>"; };
 		E8F86D61231113B4007CBCE2 /* Matrix_readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Matrix_readme.md; sourceTree = "<group>"; };
 		E8F86D62231113B4007CBCE2 /* GLSL_readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = GLSL_readme.md; sourceTree = "<group>"; };
-		E8F86D63231113B4007CBCE2 /* Fragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fragment.glsl; sourceTree = "<group>"; };
-		E8F86D64231113B4007CBCE2 /* JH_AttributeStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JH_AttributeStruct.h; sourceTree = "<group>"; };
 		E8F86D65231113B4007CBCE2 /* OpenGL_CS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OpenGL_CS.png; sourceTree = "<group>"; };
-		E8F86D66231113B4007CBCE2 /* JH_AttributeMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JH_AttributeMesh.h; sourceTree = "<group>"; };
-		E8F86D67231113B4007CBCE2 /* Vertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vertex.glsl; sourceTree = "<group>"; };
-		E8F86D69231113B4007CBCE2 /* JH_AttributeManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JH_AttributeManage.h; sourceTree = "<group>"; };
-		E8F86D6A231113B4007CBCE2 /* JH_OpenGLBrowerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JH_OpenGLBrowerView.m; sourceTree = "<group>"; };
-		E8F86D6B231113B4007CBCE2 /* JH_AttributeManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JH_AttributeManage.m; sourceTree = "<group>"; };
-		E8F86D6C231113B4007CBCE2 /* JH_OpenGLBrowerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JH_OpenGLBrowerView.h; sourceTree = "<group>"; };
 		E8F86D6D231113B4007CBCE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8F86D6E231113B4007CBCE2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E8F86D70231113B4007CBCE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,6 +83,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E84093F123152432004E5DA2 /* JH_Equipment */ = {
+			isa = PBXGroup;
+			children = (
+				E84093FD23152ABA004E5DA2 /* JH_EquipmentData */,
+				E84093F9231528F0004E5DA2 /* JHDrawViewController.h */,
+				E84093FA231528F0004E5DA2 /* JHDrawViewController.m */,
+				E8D2B0F223166D35002712BD /* JHDrawViewController.xib */,
+				E8D2B0EE23165B61002712BD /* JH_OpenGLDrawView.h */,
+				E8D2B0EF23165B61002712BD /* JH_OpenGLDrawView.m */,
+			);
+			path = JH_Equipment;
+			sourceTree = "<group>";
+		};
+		E84093F223152849004E5DA2 /* JH_OpenGL */ = {
+			isa = PBXGroup;
+			children = (
+				E84093F423152849004E5DA2 /* JH_OpenGLView.h */,
+				E84093F323152849004E5DA2 /* JH_OpenGLView.m */,
+				E840940423152CEA004E5DA2 /* JH_OpenGLEffect.h */,
+				E840940523152CEA004E5DA2 /* JH_OpenGLEffect.m */,
+				E84093FF23152B1F004E5DA2 /* JH_AttributeStruct.h */,
+			);
+			path = JH_OpenGL;
+			sourceTree = "<group>";
+		};
+		E84093FC23152AB1004E5DA2 /* JH_BrowerData */ = {
+			isa = PBXGroup;
+			children = (
+				E840940023152B1F004E5DA2 /* Fragment.glsl */,
+				E840940123152B1F004E5DA2 /* Vertex.glsl */,
+				E84093FE23152B1F004E5DA2 /* JH_BrowerAttributeMesh.h */,
+			);
+			path = JH_BrowerData;
+			sourceTree = "<group>";
+		};
+		E84093FD23152ABA004E5DA2 /* JH_EquipmentData */ = {
+			isa = PBXGroup;
+			children = (
+				E81261F02317A37A008B66F0 /* FragmentDraw.glsl */,
+				E81261F12317A37A008B66F0 /* VertexDraw.glsl */,
+			);
+			path = JH_EquipmentData;
+			sourceTree = "<group>";
+		};
 		E8E5DACA2300FA6500C5BC17 = {
 			isa = PBXGroup;
 			children = (
@@ -92,7 +155,7 @@
 		E8F86D5B231113B4007CBCE2 /* OpenGL_Brower */ = {
 			isa = PBXGroup;
 			children = (
-				E8F86D5D231113B4007CBCE2 /* CJ_OpenGLModule */,
+				E8F86D5D231113B4007CBCE2 /* JH_OpenGLModule */,
 				E8F86D5C231113B4007CBCE2 /* AppDelegate.h */,
 				E8F86D74231113B4007CBCE2 /* AppDelegate.m */,
 				E8F86D76231113B4007CBCE2 /* ViewController.h */,
@@ -101,45 +164,45 @@
 				E8F86D71231113B4007CBCE2 /* Main.storyboard */,
 				E8F86D73231113B4007CBCE2 /* main.m */,
 				E8F86D75231113B4007CBCE2 /* Info.plist */,
+				E8D2B0F123165D6E002712BD /* JH_Configure.pch */,
 				E8F86D6D231113B4007CBCE2 /* Assets.xcassets */,
 			);
 			path = OpenGL_Brower;
 			sourceTree = "<group>";
 		};
-		E8F86D5D231113B4007CBCE2 /* CJ_OpenGLModule */ = {
+		E8F86D5D231113B4007CBCE2 /* JH_OpenGLModule */ = {
 			isa = PBXGroup;
 			children = (
-				E8F86D5E231113B4007CBCE2 /* CJ_OpenGLSource */,
-				E8F86D68231113B4007CBCE2 /* CJ_OpenGLTool */,
+				E84093F223152849004E5DA2 /* JH_OpenGL */,
+				E8F86D5E231113B4007CBCE2 /* JH_OpenGLSource */,
+				E84093F123152432004E5DA2 /* JH_Equipment */,
+				E8F86D68231113B4007CBCE2 /* JH_Brower */,
 			);
-			path = CJ_OpenGLModule;
+			path = JH_OpenGLModule;
 			sourceTree = "<group>";
 		};
-		E8F86D5E231113B4007CBCE2 /* CJ_OpenGLSource */ = {
+		E8F86D5E231113B4007CBCE2 /* JH_OpenGLSource */ = {
 			isa = PBXGroup;
 			children = (
 				E8F86D5F231113B4007CBCE2 /* OpenGL_Texture.png */,
 				E8F86D60231113B4007CBCE2 /* timg.jpeg */,
 				E8F86D61231113B4007CBCE2 /* Matrix_readme.md */,
 				E8F86D62231113B4007CBCE2 /* GLSL_readme.md */,
-				E8F86D63231113B4007CBCE2 /* Fragment.glsl */,
-				E8F86D64231113B4007CBCE2 /* JH_AttributeStruct.h */,
 				E8F86D65231113B4007CBCE2 /* OpenGL_CS.png */,
-				E8F86D66231113B4007CBCE2 /* JH_AttributeMesh.h */,
-				E8F86D67231113B4007CBCE2 /* Vertex.glsl */,
 			);
-			path = CJ_OpenGLSource;
+			path = JH_OpenGLSource;
 			sourceTree = "<group>";
 		};
-		E8F86D68231113B4007CBCE2 /* CJ_OpenGLTool */ = {
+		E8F86D68231113B4007CBCE2 /* JH_Brower */ = {
 			isa = PBXGroup;
 			children = (
-				E8F86D69231113B4007CBCE2 /* JH_AttributeManage.h */,
-				E8F86D6A231113B4007CBCE2 /* JH_OpenGLBrowerView.m */,
-				E8F86D6B231113B4007CBCE2 /* JH_AttributeManage.m */,
-				E8F86D6C231113B4007CBCE2 /* JH_OpenGLBrowerView.h */,
+				E84093FC23152AB1004E5DA2 /* JH_BrowerData */,
+				E84093F6231528E2004E5DA2 /* JHBrowerViewController.h */,
+				E84093F7231528E2004E5DA2 /* JHBrowerViewController.m */,
+				E8D2B0EB23165B4B002712BD /* JH_OpenGLBrowerView.h */,
+				E8D2B0EC23165B4B002712BD /* JH_OpenGLBrowerView.m */,
 			);
-			path = CJ_OpenGLTool;
+			path = JH_Brower;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,13 +265,16 @@
 				E8F86D82231113B5007CBCE2 /* LaunchScreen.storyboard in Resources */,
 				E8F86D83231113B5007CBCE2 /* Main.storyboard in Resources */,
 				E8F86D7C231113B4007CBCE2 /* OpenGL_CS.png in Resources */,
+				E81261F22317A37A008B66F0 /* FragmentDraw.glsl in Resources */,
 				E8F86D7A231113B4007CBCE2 /* GLSL_readme.md in Resources */,
+				E8D2B0F323166D35002712BD /* JHDrawViewController.xib in Resources */,
+				E81261F32317A37A008B66F0 /* VertexDraw.glsl in Resources */,
 				E8F86D79231113B4007CBCE2 /* Matrix_readme.md in Resources */,
 				E8F86D78231113B4007CBCE2 /* timg.jpeg in Resources */,
 				E8F86D77231113B4007CBCE2 /* OpenGL_Texture.png in Resources */,
-				E8F86D7B231113B4007CBCE2 /* Fragment.glsl in Resources */,
 				E8F86D80231113B5007CBCE2 /* Assets.xcassets in Resources */,
-				E8F86D7D231113B4007CBCE2 /* Vertex.glsl in Resources */,
+				E840940223152B1F004E5DA2 /* Fragment.glsl in Resources */,
+				E840940323152B1F004E5DA2 /* Vertex.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,9 +286,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8F86D81231113B5007CBCE2 /* ViewController.m in Sources */,
-				E8F86D7E231113B5007CBCE2 /* JH_OpenGLBrowerView.m in Sources */,
 				E8F86D84231113B5007CBCE2 /* main.m in Sources */,
-				E8F86D7F231113B5007CBCE2 /* JH_AttributeManage.m in Sources */,
+				E8D2B0ED23165B4B002712BD /* JH_OpenGLBrowerView.m in Sources */,
+				E84093F8231528E2004E5DA2 /* JHBrowerViewController.m in Sources */,
+				E84093F523152849004E5DA2 /* JH_OpenGLView.m in Sources */,
+				E840940623152CEA004E5DA2 /* JH_OpenGLEffect.m in Sources */,
+				E84093FB231528F0004E5DA2 /* JHDrawViewController.m in Sources */,
+				E8D2B0F023165B61002712BD /* JH_OpenGLDrawView.m in Sources */,
 				E8F86D85231113B5007CBCE2 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,6 +437,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E96A3MNGLQ;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/dafyit/Desktop/Learn/ToolWorkSpace/OpenGL_Brower/OpenGL_Brower/JH_Configure.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/OpenGL_Brower/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -385,6 +457,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E96A3MNGLQ;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/dafyit/Desktop/Learn/ToolWorkSpace/OpenGL_Brower/OpenGL_Brower/JH_Configure.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/OpenGL_Brower/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (

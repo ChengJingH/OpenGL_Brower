@@ -1,0 +1,17 @@
+//
+//  JH_Configure.pch
+//  OpenGL_Brower
+//
+//  Created by walen on 2019/8/28.
+//  Copyright © 2019 CJH. All rights reserved.
+//
+
+#ifndef JH_Configure_pch
+#define JH_Configure_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "JH_AttributeStruct.h"
+
+#endif /* JH_Configure_pch */
