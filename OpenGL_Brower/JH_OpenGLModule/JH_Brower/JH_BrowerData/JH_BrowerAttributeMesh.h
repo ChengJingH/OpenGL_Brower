@@ -14,7 +14,7 @@ GLfloat indexData[] = {
 
 
 //反面-> 顺时针
-//证明-> 逆时针
+//正面-> 逆时针
 
 //x , y , z , r , g , b , a , s ,t
 //vertex (顶点)

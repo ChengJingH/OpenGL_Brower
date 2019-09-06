@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "JHBrowerViewController.h"
 #import "JHDrawViewController.h"
+#import "JHLightViewController.h"
 
 @interface ViewController ()
 
@@ -24,5 +25,8 @@
     JHDrawViewController *vc = [[JHDrawViewController alloc] init];
     [self presentViewController:vc animated:YES completion:nil];
 }
-
+- (IBAction)lightBtn:(id)sender {
+    JHLightViewController *vc = [[JHLightViewController alloc] init];
+    [self presentViewController:vc animated:YES completion:nil];
+}
 @end

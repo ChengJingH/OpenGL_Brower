@@ -7,33 +7,30 @@
 //
 
 
-#import <GLKit/GLKit.h>
-
 struct JH_MeshPoint {
-    GLfloat position[3];
-    GLfloat postionColor[3];
-    GLfloat texture[2];
+    float position[3];
+    float postionColor[3];
+    float texture[2];
 };
 
 struct JH_VertexPoint {
-    GLfloat x;
-    GLfloat y;
+    float x;
+    float y;
 };
 typedef struct JH_VertexPoint JH_VertexPoint;
-CG_INLINE JH_VertexPoint JH_VertexPointMake(GLfloat x,GLfloat y)
+static inline JH_VertexPoint JH_VertexPointMake(float x,float y)
 {
     JH_VertexPoint p;p.x = x;p.y = y;return p;
 }
 
-
 struct JH_ColorRGBA {
-    GLfloat red;
-    GLfloat green;
-    GLfloat blue;
-    GLfloat alpha;
+    float red;
+    float green;
+    float blue;
+    float alpha;
 };
 typedef struct JH_ColorRGBA JH_ColorRGBA; //定义别名
-CG_INLINE JH_ColorRGBA JH_ColorRGBAMake(CGFloat r,CGFloat g,CGFloat b,CGFloat a)
+static inline JH_ColorRGBA JH_ColorRGBAMake(float r,float g,float b,float a)
 {
     JH_ColorRGBA p; p.red = r; p.green = g; p.blue = b; p.alpha = a; return p;
 };

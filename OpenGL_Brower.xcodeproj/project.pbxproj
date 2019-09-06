@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E80997EB23190834000C49D2 /* OpenGL_readme.md in Resources */ = {isa = PBXBuildFile; fileRef = E80997EA23190834000C49D2 /* OpenGL_readme.md */; };
+		E80997F023191BAC000C49D2 /* JHLightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E80997EF23191BAC000C49D2 /* JHLightViewController.m */; };
+		E80997F323191BD5000C49D2 /* JH_OpenGLLightView.m in Sources */ = {isa = PBXBuildFile; fileRef = E80997F223191BD5000C49D2 /* JH_OpenGLLightView.m */; };
+		E80ABC15231FC31C00C925B7 /* JH_MatrixOperate.c in Sources */ = {isa = PBXBuildFile; fileRef = E80ABC14231FC31C00C925B7 /* JH_MatrixOperate.c */; };
 		E81261F22317A37A008B66F0 /* FragmentDraw.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E81261F02317A37A008B66F0 /* FragmentDraw.glsl */; };
 		E81261F32317A37A008B66F0 /* VertexDraw.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E81261F12317A37A008B66F0 /* VertexDraw.glsl */; };
+		E822B30E231CFE1F001A5ECB /* FragmentLight.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E822B30C231CFE1E001A5ECB /* FragmentLight.glsl */; };
+		E822B30F231CFE1F001A5ECB /* VertexLight.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E822B30D231CFE1E001A5ECB /* VertexLight.glsl */; };
 		E84093F523152849004E5DA2 /* JH_OpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = E84093F323152849004E5DA2 /* JH_OpenGLView.m */; };
 		E84093F8231528E2004E5DA2 /* JHBrowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84093F7231528E2004E5DA2 /* JHBrowerViewController.m */; };
 		E84093FB231528F0004E5DA2 /* JHDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84093FA231528F0004E5DA2 /* JHDrawViewController.m */; };
@@ -33,8 +39,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E80997EA23190834000C49D2 /* OpenGL_readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = OpenGL_readme.md; sourceTree = "<group>"; };
+		E80997EE23191BAC000C49D2 /* JHLightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHLightViewController.h; sourceTree = "<group>"; };
+		E80997EF23191BAC000C49D2 /* JHLightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHLightViewController.m; sourceTree = "<group>"; };
+		E80997F123191BD5000C49D2 /* JH_OpenGLLightView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JH_OpenGLLightView.h; sourceTree = "<group>"; };
+		E80997F223191BD5000C49D2 /* JH_OpenGLLightView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JH_OpenGLLightView.m; sourceTree = "<group>"; };
+		E80ABC13231FC31C00C925B7 /* JH_MatrixOperate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JH_MatrixOperate.h; sourceTree = "<group>"; };
+		E80ABC14231FC31C00C925B7 /* JH_MatrixOperate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = JH_MatrixOperate.c; sourceTree = "<group>"; };
 		E81261F02317A37A008B66F0 /* FragmentDraw.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FragmentDraw.glsl; sourceTree = "<group>"; };
 		E81261F12317A37A008B66F0 /* VertexDraw.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VertexDraw.glsl; sourceTree = "<group>"; };
+		E822B302231CB7B8001A5ECB /* JH_LightAttributeMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JH_LightAttributeMesh.h; sourceTree = "<group>"; };
+		E822B30C231CFE1E001A5ECB /* FragmentLight.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FragmentLight.glsl; sourceTree = "<group>"; };
+		E822B30D231CFE1E001A5ECB /* VertexLight.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VertexLight.glsl; sourceTree = "<group>"; };
 		E84093F323152849004E5DA2 /* JH_OpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JH_OpenGLView.m; sourceTree = "<group>"; };
 		E84093F423152849004E5DA2 /* JH_OpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JH_OpenGLView.h; sourceTree = "<group>"; };
 		E84093F6231528E2004E5DA2 /* JHBrowerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHBrowerViewController.h; sourceTree = "<group>"; };
@@ -83,6 +99,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E80997EC231919AD000C49D2 /* JH_Lighting */ = {
+			isa = PBXGroup;
+			children = (
+				E80997ED231919DB000C49D2 /* JH_LightingData */,
+				E80997EE23191BAC000C49D2 /* JHLightViewController.h */,
+				E80997EF23191BAC000C49D2 /* JHLightViewController.m */,
+				E80997F123191BD5000C49D2 /* JH_OpenGLLightView.h */,
+				E80997F223191BD5000C49D2 /* JH_OpenGLLightView.m */,
+			);
+			path = JH_Lighting;
+			sourceTree = "<group>";
+		};
+		E80997ED231919DB000C49D2 /* JH_LightingData */ = {
+			isa = PBXGroup;
+			children = (
+				E822B30C231CFE1E001A5ECB /* FragmentLight.glsl */,
+				E822B30D231CFE1E001A5ECB /* VertexLight.glsl */,
+				E822B302231CB7B8001A5ECB /* JH_LightAttributeMesh.h */,
+			);
+			path = JH_LightingData;
+			sourceTree = "<group>";
+		};
 		E84093F123152432004E5DA2 /* JH_Equipment */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +142,8 @@
 				E840940423152CEA004E5DA2 /* JH_OpenGLEffect.h */,
 				E840940523152CEA004E5DA2 /* JH_OpenGLEffect.m */,
 				E84093FF23152B1F004E5DA2 /* JH_AttributeStruct.h */,
+				E80ABC13231FC31C00C925B7 /* JH_MatrixOperate.h */,
+				E80ABC14231FC31C00C925B7 /* JH_MatrixOperate.c */,
 			);
 			path = JH_OpenGL;
 			sourceTree = "<group>";
@@ -177,6 +217,7 @@
 				E8F86D5E231113B4007CBCE2 /* JH_OpenGLSource */,
 				E84093F123152432004E5DA2 /* JH_Equipment */,
 				E8F86D68231113B4007CBCE2 /* JH_Brower */,
+				E80997EC231919AD000C49D2 /* JH_Lighting */,
 			);
 			path = JH_OpenGLModule;
 			sourceTree = "<group>";
@@ -185,10 +226,11 @@
 			isa = PBXGroup;
 			children = (
 				E8F86D5F231113B4007CBCE2 /* OpenGL_Texture.png */,
+				E8F86D65231113B4007CBCE2 /* OpenGL_CS.png */,
 				E8F86D60231113B4007CBCE2 /* timg.jpeg */,
 				E8F86D61231113B4007CBCE2 /* Matrix_readme.md */,
 				E8F86D62231113B4007CBCE2 /* GLSL_readme.md */,
-				E8F86D65231113B4007CBCE2 /* OpenGL_CS.png */,
+				E80997EA23190834000C49D2 /* OpenGL_readme.md */,
 			);
 			path = JH_OpenGLSource;
 			sourceTree = "<group>";
@@ -264,8 +306,11 @@
 			files = (
 				E8F86D82231113B5007CBCE2 /* LaunchScreen.storyboard in Resources */,
 				E8F86D83231113B5007CBCE2 /* Main.storyboard in Resources */,
+				E822B30E231CFE1F001A5ECB /* FragmentLight.glsl in Resources */,
 				E8F86D7C231113B4007CBCE2 /* OpenGL_CS.png in Resources */,
+				E80997EB23190834000C49D2 /* OpenGL_readme.md in Resources */,
 				E81261F22317A37A008B66F0 /* FragmentDraw.glsl in Resources */,
+				E822B30F231CFE1F001A5ECB /* VertexLight.glsl in Resources */,
 				E8F86D7A231113B4007CBCE2 /* GLSL_readme.md in Resources */,
 				E8D2B0F323166D35002712BD /* JHDrawViewController.xib in Resources */,
 				E81261F32317A37A008B66F0 /* VertexDraw.glsl in Resources */,
@@ -285,7 +330,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E80997F323191BD5000C49D2 /* JH_OpenGLLightView.m in Sources */,
+				E80ABC15231FC31C00C925B7 /* JH_MatrixOperate.c in Sources */,
 				E8F86D81231113B5007CBCE2 /* ViewController.m in Sources */,
+				E80997F023191BAC000C49D2 /* JHLightViewController.m in Sources */,
 				E8F86D84231113B5007CBCE2 /* main.m in Sources */,
 				E8D2B0ED23165B4B002712BD /* JH_OpenGLBrowerView.m in Sources */,
 				E84093F8231528E2004E5DA2 /* JHBrowerViewController.m in Sources */,

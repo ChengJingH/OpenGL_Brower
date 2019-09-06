@@ -38,13 +38,24 @@
                                     <action selector="drawBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i3E-TD-NtU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wj-5d-OTA">
+                                <rect key="frame" x="191.5" y="246" width="31" height="30"/>
+                                <state key="normal" title="光照"/>
+                                <connections>
+                                    <action selector="lightBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5FZ-Ar-Lf3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="7Wj-5d-OTA" firstAttribute="height" secondItem="ZPt-sB-ggw" secondAttribute="height" id="5iP-z8-Mb3"/>
                             <constraint firstItem="2uB-S4-ljQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Ajt-ze-Ruo"/>
                             <constraint firstItem="ZPt-sB-ggw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BVw-cd-cAK"/>
                             <constraint firstItem="ZPt-sB-ggw" firstAttribute="top" secondItem="2uB-S4-ljQ" secondAttribute="bottom" constant="60" id="Gar-vh-Nh3"/>
+                            <constraint firstItem="7Wj-5d-OTA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Q12-LM-SVB"/>
                             <constraint firstItem="2uB-S4-ljQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dDm-0E-JmT"/>
+                            <constraint firstItem="7Wj-5d-OTA" firstAttribute="top" secondItem="ZPt-sB-ggw" secondAttribute="bottom" constant="52" id="elZ-dJ-TKB"/>
+                            <constraint firstItem="ZPt-sB-ggw" firstAttribute="height" secondItem="2uB-S4-ljQ" secondAttribute="height" id="jcZ-Ee-DTs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

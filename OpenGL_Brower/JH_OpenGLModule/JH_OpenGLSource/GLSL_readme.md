@@ -42,6 +42,7 @@ uniform变量一般用来表示：变换矩阵，材质，光照参数和颜色�
     
 参考资料    
 https://blog.csdn.net/hgl868/article/details/7846269
+https://www.khronos.org/registry/OpenGL-Refpages/es2.0/
 
 # 纹理
 
