@@ -21,9 +21,19 @@
         self.frame = [UIScreen mainScreen].bounds;
         
         //设置上下文
-        self.gl_effect = [[JH_OpenGLEffect alloc] init];
-        [self.gl_effect setCurrentContext];
+        if (!self.gl_context) {
+            self.gl_context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+            [EAGLContext setCurrentContext:self.gl_context];
+        }
         
+        //设置上下文
+        if (![EAGLContext currentContext]) {
+            [EAGLContext setCurrentContext:self.gl_context];
+        }
+        
+        self.gl_effect = [[JH_OpenGLEffect alloc] init];
+        self.gl_lightEffect  = [[JH_OpenGLEffect alloc] init];
+
         self.gl_layer = [[CAEAGLLayer alloc] init];
         self.gl_layer.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
         self.gl_layer.drawableProperties = @{kEAGLDrawablePropertyColorFormat:kEAGLColorFormatRGBA8,kEAGLDrawablePropertyRetainedBacking:[NSNumber numberWithBool:NO]};
@@ -69,7 +79,7 @@
 {
     glGenRenderbuffers(1, &_renderbuffers);
     glBindRenderbuffer(GL_RENDERBUFFER, _renderbuffers);
-    [self.gl_effect.gl_context renderbufferStorage:GL_RENDERBUFFER fromDrawable:self.gl_layer];
+    [self.gl_context renderbufferStorage:GL_RENDERBUFFER fromDrawable:self.gl_layer];
     
     //创建深度缓存区
     GLint width;

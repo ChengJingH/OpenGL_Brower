@@ -1,17 +1,15 @@
-attribute vec3 position;
-attribute vec3 positionColor;
+attribute vec3 lightPosition;
+attribute vec3 lightPositionColor;
 
-attribute vec3 positionNormal;   //顶点法线向量
+uniform mat4 lightProjectMatrix;      //平截体矩阵
+uniform mat4 lightModelViewMatrix;    //视图矩阵
 
-uniform mat4 projectMatrix;      //平截体矩阵
-uniform mat4 modelViewMatrix;    //视图矩阵
-
-varying lowp vec3 varyPositionColor;
+varying lowp vec3 varyLightPositionColor;
 
 void main()
 {
-    varyPositionColor = positionColor;
+    varyLightPositionColor = lightPositionColor;
     
-    vec4 vertexP = vec4(position, 1.0);
-    gl_Position = projectMatrix * modelViewMatrix * vertexP;
+    vec4 vertexP = vec4(lightPosition, 1.0);
+    gl_Position = lightProjectMatrix * lightModelViewMatrix * vertexP;
 }

@@ -14,9 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface JH_OpenGLView : UIView
 
 @property (nonatomic, strong)CAEAGLLayer *gl_layer;
+@property (nonatomic, strong)EAGLContext *gl_context;
 @property (nonatomic, strong)JH_OpenGLEffect *gl_effect;
+@property (nonatomic, strong)JH_OpenGLEffect *gl_lightEffect;
 
 @property (nonatomic, assign)GLuint vertexbuffers;
+@property (nonatomic, assign)GLuint lightbuffers;
 
 @property (nonatomic, assign)GLuint framebuffers;
 @property (nonatomic, assign)GLuint renderbuffers;

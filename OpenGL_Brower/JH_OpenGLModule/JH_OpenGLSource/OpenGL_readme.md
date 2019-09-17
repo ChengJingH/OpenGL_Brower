@@ -1,3 +1,5 @@
+#  学习网址：https://learnopengl-cn.github.io
+
 #  数据饥饿
 CPU 运算快，内存读写慢。当CPU因为等待内存读写而处于次优状态，这种次优状态就称为数据饥饿。
 

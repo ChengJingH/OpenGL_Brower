@@ -70,7 +70,7 @@
     glUniform1i(pointColorFlag, self.colorFlag);
     
     glDrawArrays(GL_POINTS, 0, (int32_t)_vertexData.length/sizeof(JH_VertexPoint));
-    [self.gl_effect.gl_context presentRenderbuffer:GL_RENDERBUFFER];
+    [self.gl_context presentRenderbuffer:GL_RENDERBUFFER];
 }
 
 #pragma mark - private method

@@ -12,18 +12,21 @@
 
 //OpenGL ES函数
 #import <OpenGLES/EAGL.h>
-#import <OpenGLES/ES1/gl.h>
-#import <OpenGLES/ES1/glext.h>
+#import <OpenGLES/ES2/gl.h>
+#import <OpenGLES/ES2/glext.h>
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JH_OpenGLEffect : NSObject
 
-@property (nonatomic, strong)EAGLContext *gl_context;
-@property (nonatomic, assign, readonly)GLuint program;
+@property (nonatomic, assign)GLuint program;
+//@property (nonatomic, assign)GLuint modelViewUniform;
+//@property (nonatomic, assign)GLuint projectUniform;
 
-- (void)setCurrentContext;
+@property (nonatomic, assign)GLuint vertexShader;
+@property (nonatomic, assign)GLuint fragmentShader;
+
 //- (void)genFrameBuffer;
 //- (void)genRenderBuffer:(id)gl_layer;
 //

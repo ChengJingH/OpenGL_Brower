@@ -141,7 +141,7 @@ static int smoothCount = 0;
     
     
     glDrawArrays(GL_TRIANGLES, 0, sizeof(vertexData)/sizeof(GLfloat)/8);
-    [self.gl_effect.gl_context presentRenderbuffer:GL_RENDERBUFFER];
+    [self.gl_context presentRenderbuffer:GL_RENDERBUFFER];
 
 }
 

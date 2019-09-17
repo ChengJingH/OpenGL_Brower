@@ -16,23 +16,7 @@
 
 @implementation JH_OpenGLEffect
 
-//设置别名
-@synthesize program = program;
-
-
-- (void)setCurrentContext
-{
-    if (!self.gl_context) {
-        self.gl_context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-        [EAGLContext setCurrentContext:self.gl_context];
-    }
-
-    //设置上下文
-    if (![EAGLContext currentContext]) {
-        [EAGLContext setCurrentContext:self.gl_context];
-    }
-}
-
+@synthesize program = program,vertexShader = vertexShader,fragmentShader = fragmentShader;
 
 //- (void)genFrameBuffer
 //{
@@ -133,7 +117,6 @@
 //着色器
 - (void)loadShader:(NSString *)vertexFile fragment:(NSString *)fragmentFile
 {
-    GLuint vertexShader,fragmentShader;
     vertexShader = [self complieShader:vertexFile andShaderType:GL_VERTEX_SHADER];
     fragmentShader = [self complieShader:fragmentFile andShaderType:GL_FRAGMENT_SHADER];
     
