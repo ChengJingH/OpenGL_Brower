@@ -190,6 +190,9 @@
     GLuint lightColorBuffer0 = glGetUniformLocation(self.gl_effect.program, "lightColor");
     glUniform3f(lightColorBuffer0, 1.0, 1.0, 1.0);
     
+    GLuint lightPositionBuffer0 = glGetUniformLocation(self.gl_effect.program, "lightPosition");
+    glUniform3f(lightPositionBuffer0, 2.0, 4.0, -4.0);
+    
     //摄像机位置
     GLuint cameraPositionBuffer = glGetUniformLocation(self.gl_effect.program, "cameraPosition");
     glUniform3f(cameraPositionBuffer, 0.0, 0.0, 0.0);
