@@ -13,6 +13,7 @@
 		E80ABC15231FC31C00C925B7 /* JH_MatrixOperate.c in Sources */ = {isa = PBXBuildFile; fileRef = E80ABC14231FC31C00C925B7 /* JH_MatrixOperate.c */; };
 		E81261F22317A37A008B66F0 /* FragmentDraw.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E81261F02317A37A008B66F0 /* FragmentDraw.glsl */; };
 		E81261F32317A37A008B66F0 /* VertexDraw.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E81261F12317A37A008B66F0 /* VertexDraw.glsl */; };
+		E8153414233B8EFA00F7AB8E /* JH_OpenGLAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = E8153413233B8EFA00F7AB8E /* JH_OpenGLAttribute.m */; };
 		E816C885232F5A6A0037C27E /* VertexObj.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E816C883232F5A6A0037C27E /* VertexObj.glsl */; };
 		E816C886232F5A6A0037C27E /* FragmentObj.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E816C884232F5A6A0037C27E /* FragmentObj.glsl */; };
 		E822B30E231CFE1F001A5ECB /* FragmentLight.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E822B30C231CFE1E001A5ECB /* FragmentLight.glsl */; };
@@ -50,6 +51,8 @@
 		E80ABC14231FC31C00C925B7 /* JH_MatrixOperate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = JH_MatrixOperate.c; sourceTree = "<group>"; };
 		E81261F02317A37A008B66F0 /* FragmentDraw.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FragmentDraw.glsl; sourceTree = "<group>"; };
 		E81261F12317A37A008B66F0 /* VertexDraw.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VertexDraw.glsl; sourceTree = "<group>"; };
+		E8153412233B8EFA00F7AB8E /* JH_OpenGLAttribute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JH_OpenGLAttribute.h; sourceTree = "<group>"; };
+		E8153413233B8EFA00F7AB8E /* JH_OpenGLAttribute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JH_OpenGLAttribute.m; sourceTree = "<group>"; };
 		E816C883232F5A6A0037C27E /* VertexObj.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VertexObj.glsl; sourceTree = "<group>"; };
 		E816C884232F5A6A0037C27E /* FragmentObj.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FragmentObj.glsl; sourceTree = "<group>"; };
 		E822B302231CB7B8001A5ECB /* JH_LightAttributeMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JH_LightAttributeMesh.h; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 				E84093F323152849004E5DA2 /* JH_OpenGLView.m */,
 				E840940423152CEA004E5DA2 /* JH_OpenGLEffect.h */,
 				E840940523152CEA004E5DA2 /* JH_OpenGLEffect.m */,
+				E8153412233B8EFA00F7AB8E /* JH_OpenGLAttribute.h */,
+				E8153413233B8EFA00F7AB8E /* JH_OpenGLAttribute.m */,
 				E84093FF23152B1F004E5DA2 /* JH_AttributeStruct.h */,
 				E80ABC13231FC31C00C925B7 /* JH_MatrixOperate.h */,
 				E80ABC14231FC31C00C925B7 /* JH_MatrixOperate.c */,
@@ -346,6 +351,7 @@
 				E8D2B0ED23165B4B002712BD /* JH_OpenGLBrowerView.m in Sources */,
 				E84093F8231528E2004E5DA2 /* JHBrowerViewController.m in Sources */,
 				E84093F523152849004E5DA2 /* JH_OpenGLView.m in Sources */,
+				E8153414233B8EFA00F7AB8E /* JH_OpenGLAttribute.m in Sources */,
 				E840940623152CEA004E5DA2 /* JH_OpenGLEffect.m in Sources */,
 				E84093FB231528F0004E5DA2 /* JHDrawViewController.m in Sources */,
 				E8D2B0F023165B61002712BD /* JH_OpenGLDrawView.m in Sources */,

@@ -18,9 +18,16 @@ JH_Matrix matrixTransfer(JH_Matrix m)
 //叉乘
 JH_Vector3 vectorMutilCross(JH_Vector3 left_vec, JH_Vector3 right_vec)
 {
-    JH_Vector3 c_vector;
-    c_vector.x = left_vec.y * right_vec.z - right_vec.y * left_vec.z;
-    c_vector.y = left_vec.z * right_vec.x - right_vec.z * left_vec.x;
-    c_vector.z = left_vec.x * right_vec.y - right_vec.x * left_vec.y;
-    return c_vector;
+    JH_Vector3 r_vector;
+    r_vector.x = left_vec.y * right_vec.z - right_vec.y * left_vec.z;
+    r_vector.y = left_vec.z * right_vec.x - right_vec.z * left_vec.x;
+    r_vector.z = left_vec.x * right_vec.y - right_vec.x * left_vec.y;
+    return r_vector;
+}
+
+//点乘
+JH_Vector3 vectorDotCross(JH_Vector3 left_vec, JH_Vector3 right_vec)
+{
+    JH_Vector3 r_vector;
+    return r_vector;
 }

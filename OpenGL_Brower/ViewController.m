@@ -19,14 +19,17 @@
 
 - (IBAction)transformBtn:(id)sender {
     JHBrowerViewController *vc = [[JHBrowerViewController alloc] init];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:vc animated:YES completion:nil];
 }
 - (IBAction)drawBtn:(id)sender {
     JHDrawViewController *vc = [[JHDrawViewController alloc] init];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:vc animated:YES completion:nil];
 }
 - (IBAction)lightBtn:(id)sender {
     JHLightViewController *vc = [[JHLightViewController alloc] init];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:vc animated:YES completion:nil];
 }
 @end

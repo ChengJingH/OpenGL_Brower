@@ -8,27 +8,28 @@
 
 #import "JH_OpenGLLightView.h"
 #import "JH_LightAttributeMesh.h"
-#import <GLKit/GLKit.h>
+#import "JH_OpenGLAttribute.h"
 
 @interface JH_OpenGLLightView ()
 {
     float det_y;
     float move_y;
 }
-@property (nonatomic,assign)GLuint objVAO;
-@property (nonatomic,assign)GLuint lightVAO;
+
+@property (nonatomic,assign)GLuint lightVBO;
 
 @property (nonatomic,assign)CGPoint startP;
 @property (nonatomic,assign)CGPoint endP;
 
-@property (nonatomic,assign)GLuint modelViewObjUniform;   //Obj模型矩阵
-@property (nonatomic,assign)GLuint modelViewLightUniform; //Lighting模型矩阵
-@property (nonatomic,assign)GLuint projectObjUniform;
-@property (nonatomic,assign)GLuint projectLightUniform;
+@property (nonatomic,assign)GLuint normalBuffer;
+
+@property (nonatomic,strong)JH_OpenGLAttribute *vertexAttribute;
+@property (nonatomic,strong)JH_OpenGLAttribute *normalAttribute;
 
 @end
 
 @implementation JH_OpenGLLightView
+
 @synthesize vertexbuffers = _vertexbuffers;
 @synthesize lightbuffers = _lightbuffers;
 
@@ -43,6 +44,8 @@
         [self.gl_effect loadShader:@"VertexObj" fragment:@"FragmentObj"];
 
         //加载Obj数据
+        self.vertexAttribute = [[JH_OpenGLAttribute alloc] init];
+        self.normalAttribute = [[JH_OpenGLAttribute alloc] init];
         [self loadVertexObjData];
 
         //加载灯光数据
@@ -54,47 +57,26 @@
 //加载顶点数据
 - (void)loadVertexObjData
 {
-    glGenVertexArraysOES(1, &_objVAO);
-    
-    glGenBuffers(1, &_vertexbuffers);
-    glBindBuffer(GL_ARRAY_BUFFER, _vertexbuffers);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertexObjData), vertexObjData, GL_STATIC_DRAW);
-    
-    glBindVertexArrayOES(_objVAO);
-    
-    GLuint positionBuffer = glGetAttribLocation(self.gl_effect.program, "position");
-    glVertexAttribPointer(positionBuffer, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 8, 0 + NULL);
-    glEnableVertexAttribArray(positionBuffer);
-    
-    GLuint positionColorBuffer = glGetAttribLocation(self.gl_effect.program, "positionColor");
-    glVertexAttribPointer(positionColorBuffer, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 8, 3 * sizeof(GLfloat) + NULL);
-    glEnableVertexAttribArray(positionColorBuffer);
+    [self.vertexAttribute genVertexBufferWithAttribStride:sizeof(vertexObjData) bytes:vertexObjData usage:GL_STATIC_DRAW];
+    [self.normalAttribute genVertexBufferWithAttribStride:sizeof(vertexObjNormalData) bytes:vertexObjNormalData usage:GL_STATIC_DRAW];
 }
 
 //加载顶点数据
 - (void)loadVertexLightData
 {
-    //VAO
-    glGenVertexArraysOES(1, &_lightVAO);
-    
+    //VAO 绑定顶点属性数据数组
+    glGenVertexArraysOES(1, &_lightVBO);
+
     //VBO
     glGenBuffers(1, &_lightbuffers);
     glBindBuffer(GL_ARRAY_BUFFER, _lightbuffers);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertexLightData), vertexLightData, GL_STATIC_DRAW);
     
-    glBindVertexArrayOES(_lightVAO);
+    glBindVertexArrayOES(_lightVBO);
     
     GLuint lightPositionBuffer = glGetAttribLocation(self.gl_lightEffect.program, "lightPosition");
-    glVertexAttribPointer(lightPositionBuffer, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, 0 + NULL);
+    glVertexAttribPointer(lightPositionBuffer, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 3, 0 + NULL);
     glEnableVertexAttribArray(lightPositionBuffer);
-    
-    GLuint lightPositionColorBuffer = glGetAttribLocation(self.gl_lightEffect.program, "lightPositionColor");
-    glVertexAttribPointer(lightPositionColorBuffer, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, 3 * sizeof(GLfloat) + NULL);
-    glEnableVertexAttribArray(lightPositionColorBuffer);
-
-//    GLuint lightColorBuffer = glGetUniformLocation(self.gl_lightEffect.program, "lightColor");
-//    glUniform3f(lightColorBuffer, 1.0, 1.0, 1.0);
-    
 }
 
 
@@ -114,44 +96,33 @@
 
     t_matrix = GLKMatrix4Translate(GLKMatrix4Identity, 0.0, 0.1, -0.6);
     modelViewMatrix = GLKMatrix4Multiply(t_matrix, modelViewMatrix);
+    self.gl_effect.modelViewMatrix4 = modelViewMatrix;
     
-    _modelViewObjUniform = glGetUniformLocation(self.gl_effect.program, "modelViewMatrix");
-    glUniformMatrix4fv(_modelViewObjUniform, 1, GL_FALSE, &modelViewMatrix.m[0]);
-    
-    _projectObjUniform = glGetUniformLocation(self.gl_effect.program, "projectMatrix");
     float wh_rate = JH_ScreenWidth / JH_ScreenHeight;
-    GLKMatrix4 projectMatrix = GLKMatrix4MakePerspective(GLKMathRadiansToDegrees(M_PI/2.0), wh_rate, 0.1, 100.0);
-    glUniformMatrix4fv(_projectObjUniform, 1, GL_FALSE, &projectMatrix.m[0]);
+    self.gl_effect.projectMatrix4 = GLKMatrix4MakePerspective(GLKMathRadiansToDegrees(M_PI/2.0), wh_rate, 0.1, 100.0);
 }
 
 
 - (void)updateLightSenceData
 {
-    float rotateAngle = M_PI * 2 / JH_ScreenHeight * (det_y + move_y);
+//    float rotateAngle = M_PI * 2 / JH_ScreenHeight * (det_y + move_y);
     //    NSLog(@"旋转角 ~ %f",rotateAngle);
     
     GLKMatrix4 modelViewMatrix = GLKMatrix4Identity;
     GLKMatrix4 t_matrix = GLKMatrix4Translate(GLKMatrix4Identity, 0.0, 0.0, 0.5);
     modelViewMatrix = GLKMatrix4Multiply(t_matrix, modelViewMatrix);
-    
-    //左乘旋转矩阵
-    GLKMatrix4 r_matrix = GLKMatrix4MakeXRotation(rotateAngle);
-    modelViewMatrix = GLKMatrix4Multiply(r_matrix, modelViewMatrix);
 
-    t_matrix = GLKMatrix4Translate(GLKMatrix4Identity, 0.0, 2.0, -4.0);
+    t_matrix = GLKMatrix4Translate(GLKMatrix4Identity, 2.0, 4.0, -4.0);
     modelViewMatrix = GLKMatrix4Multiply(t_matrix, modelViewMatrix);
     
     GLKMatrix4 s_matrix = GLKMatrix4MakeScale(0.1, 0.1, 0.1);
     modelViewMatrix = GLKMatrix4Multiply(s_matrix, modelViewMatrix);
     
     //需重新传递modelview project矩阵
-    _modelViewLightUniform = glGetUniformLocation(self.gl_lightEffect.program, "lightModelViewMatrix");
-    glUniformMatrix4fv(_modelViewLightUniform, 1, GL_FALSE, &modelViewMatrix.m[0]);
+    self.gl_lightEffect.modelViewMatrix4 = modelViewMatrix;
     
-    _projectLightUniform = glGetUniformLocation(self.gl_lightEffect.program, "lightProjectMatrix");
     float wh_rate = JH_ScreenWidth / JH_ScreenHeight;
-    GLKMatrix4 projectMatrix = GLKMatrix4MakePerspective(GLKMathRadiansToDegrees(M_PI/2.0), wh_rate, 0.1, 100.0);
-    glUniformMatrix4fv(_projectLightUniform, 1, GL_FALSE, &projectMatrix.m[0]);
+    self.gl_lightEffect.projectMatrix4 = GLKMatrix4MakePerspective(GLKMathRadiansToDegrees(M_PI/2.0), wh_rate, 0.1, 100.0);
 }
 
 #pragma mark - touch
@@ -200,22 +171,42 @@
     //颜色混合 （sr*sf + dr*df, sg*sf + dg*df, sb*sf + db*df, sa*sf + da*df）
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
-    //obj
-    glUseProgram(self.gl_effect.program);
-
-    //模型变换
-    [self updateObjSenceData];
-
-    glBindVertexArrayOES(_objVAO);
-    glDrawArrays(GL_TRIANGLES, 0, sizeof(vertexObjData)/sizeof(GLfloat)/8);
-
     //光照
     glUseProgram(self.gl_lightEffect.program);
     //模型变换
     [self updateLightSenceData];
 
-    glBindVertexArrayOES(_lightVAO);
-    glDrawArrays(GL_TRIANGLES, 0, sizeof(vertexLightData)/sizeof(GLfloat)/6);
+    glBindVertexArrayOES(_lightVBO);
+    GLuint lightColorBuffer1 = glGetUniformLocation(self.gl_lightEffect.program, "illuminantColor");
+    glUniform3f(lightColorBuffer1, 1.0, 1.0, 1.0);
+
+    glDrawArrays(GL_TRIANGLES, 0, sizeof(vertexLightData)/sizeof(GLfloat)/3);
+    glBindVertexArrayOES(0);
+
+    
+    //obj
+    glUseProgram(self.gl_effect.program);
+    
+    GLuint lightColorBuffer0 = glGetUniformLocation(self.gl_effect.program, "lightColor");
+    glUniform3f(lightColorBuffer0, 1.0, 1.0, 1.0);
+    
+    //摄像机位置
+    GLuint cameraPositionBuffer = glGetUniformLocation(self.gl_effect.program, "cameraPosition");
+    glUniform3f(cameraPositionBuffer, 0.0, 0.0, 0.0);
+    
+    GLuint positionBuffer = glGetAttribLocation(self.gl_effect.program, "position");
+    [self.vertexAttribute enableVertexBufferWithAttribArray:positionBuffer size:3 stride:sizeof(GLfloat) * 8 vertexOffset:0 + NULL];
+    
+    GLuint positionColorBuffer = glGetAttribLocation(self.gl_effect.program, "positionColor");
+    [self.vertexAttribute enableVertexBufferWithAttribArray:positionColorBuffer size:3 stride:sizeof(GLfloat) * 8 vertexOffset:3 * sizeof(GLfloat) + NULL];
+    
+    GLuint positionNormalBuffer = glGetAttribLocation(self.gl_effect.program, "positionNormal");
+    [self.normalAttribute enableVertexBufferWithAttribArray:positionNormalBuffer size:3 stride:sizeof(GLfloat) * 3 vertexOffset:0 + NULL];
+
+    //模型变换
+    [self updateObjSenceData];
+
+    glDrawArrays(GL_TRIANGLES, 0, sizeof(vertexObjData)/sizeof(GLfloat)/8);
     
     //渲染 后帧 -> 前帧
     [self.gl_context presentRenderbuffer:GL_RENDERBUFFER];

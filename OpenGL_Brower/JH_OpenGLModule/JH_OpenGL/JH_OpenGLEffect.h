@@ -15,30 +15,25 @@
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
 
+#import "JH_OpenGLAttribute.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JH_OpenGLEffect : NSObject
 
 @property (nonatomic, assign)GLuint program;
-//@property (nonatomic, assign)GLuint modelViewUniform;
-//@property (nonatomic, assign)GLuint projectUniform;
+@property (nonatomic, assign)GLKMatrix4 projectMatrix4;
+@property (nonatomic, assign)GLKMatrix4 modelViewMatrix4;
 
-@property (nonatomic, assign)GLuint vertexShader;
-@property (nonatomic, assign)GLuint fragmentShader;
+@property (nonatomic,strong)JH_OpenGLAttribute *objAttribute;
+@property (nonatomic,strong)JH_OpenGLAttribute *lightAttribute;
+
 
 //- (void)genFrameBuffer;
 //- (void)genRenderBuffer:(id)gl_layer;
-//
-//- (void)genVertexBuffer:(GLfloat *)vertexDatas
-//                  usage:(GLenum)usage;
-//
-//- (void)enableVertexAttribArray:(GLint)indx
-//                     vertexSize:(GLint)v_size
-//                   vertexStride:(GLsizei)v_stride
-//                   vertexOffset:(const GLvoid *)ptr;
-//
-//
+
+
 
 
 /**
@@ -46,6 +41,10 @@ NS_ASSUME_NONNULL_BEGIN
  @param fragmentFile 片段着色器文件
  */
 - (void)loadShader:(NSString *)vertexFile fragment:(NSString *)fragmentFile;
+
+/**
+ 加载纹理
+ */
 - (void)loadTextureBuffer;
 
 @end

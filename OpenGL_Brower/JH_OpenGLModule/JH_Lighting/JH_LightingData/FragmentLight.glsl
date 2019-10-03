@@ -1,8 +1,6 @@
-uniform lowp vec3 lightColor;        //光源颜色
-
-varying lowp vec3 varyLightPositionColor;
+uniform lowp vec3 illuminantColor;
 
 void main()
 {
-    gl_FragColor = vec4(varyLightPositionColor, 1.0);
+    gl_FragColor = vec4(illuminantColor, 1.0);
 }

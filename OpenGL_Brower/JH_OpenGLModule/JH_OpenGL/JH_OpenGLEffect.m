@@ -8,15 +8,9 @@
 
 #import "JH_OpenGLEffect.h"
 
-@interface JH_OpenGLEffect ()
-
-
-
-@end
-
 @implementation JH_OpenGLEffect
 
-@synthesize program = program,vertexShader = vertexShader,fragmentShader = fragmentShader;
+@synthesize program = program;
 
 //- (void)genFrameBuffer
 //{
@@ -56,33 +50,18 @@
 //    glEnable(GL_DEPTH_TEST);
 //}
 
-//- (void)genVertexBuffer:(GLfloat *)vertexDatas
-//                  usage:(GLenum)usage
-//{
-//    glGenBuffers(1, &vertexbuffers);
-//    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffers);
-//    glBufferData(GL_ARRAY_BUFFER,
-//                 sizeof(vertexData),
-//                 vertexData,
-//                 usage);
-//}
 
-//- (void)enableVertexAttribArray:(GLint)indx
-//                     vertexSize:(GLint)v_size
-//                   vertexStride:(GLsizei)v_stride
-//                   vertexOffset:(const GLvoid *)ptr
-//{
-//    glVertexAttribPointer(indx,
-//                          v_size,
-//                          GL_FLOAT,
-//                          GL_FALSE,
-//                          v_stride,
-//                          ptr);
-//
-//    glEnableVertexAttribArray(indx);
-//}
+- (void)setProjectMatrix4:(GLKMatrix4)projectMatrix4
+{
+    _projectMatrix4 = projectMatrix4;
+    glUniformMatrix4fv(glGetUniformLocation(self.program, "projectMatrix"), 1, GL_FALSE, &projectMatrix4.m[0]);
+}
 
-
+- (void)setModelViewMatrix4:(GLKMatrix4)modelViewMatrix4
+{
+    _modelViewMatrix4 = modelViewMatrix4;
+    glUniformMatrix4fv(glGetUniformLocation(self.program, "modelViewMatrix"), 1, GL_FALSE, &modelViewMatrix4.m[0]);
+}
 
 //纹理缓存
 - (void)loadTextureBuffer
@@ -117,8 +96,8 @@
 //着色器
 - (void)loadShader:(NSString *)vertexFile fragment:(NSString *)fragmentFile
 {
-    vertexShader = [self complieShader:vertexFile andShaderType:GL_VERTEX_SHADER];
-    fragmentShader = [self complieShader:fragmentFile andShaderType:GL_FRAGMENT_SHADER];
+    GLuint vertexShader = [self complieShader:vertexFile andShaderType:GL_VERTEX_SHADER];
+    GLuint fragmentShader = [self complieShader:fragmentFile andShaderType:GL_FRAGMENT_SHADER];
     
     program = glCreateProgram();
     glAttachShader(program, vertexShader);
