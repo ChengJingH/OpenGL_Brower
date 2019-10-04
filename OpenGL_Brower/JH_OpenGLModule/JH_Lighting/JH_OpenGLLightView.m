@@ -190,12 +190,29 @@
     GLuint lightColorBuffer0 = glGetUniformLocation(self.gl_effect.program, "lightColor");
     glUniform3f(lightColorBuffer0, 1.0, 1.0, 1.0);
     
-    GLuint lightPositionBuffer0 = glGetUniformLocation(self.gl_effect.program, "lightPosition");
-    glUniform3f(lightPositionBuffer0, 2.0, 4.0, -4.0);
-    
+    //灯光设置
+    GLuint lightPosition = glGetUniformLocation(self.gl_effect.program, "light.lightPosition");
+    glUniform3f(lightPosition, 2.0, 4.0, -4.0);
+    GLuint lightAmbientColor = glGetUniformLocation(self.gl_effect.program, "light.ambientColor");
+    glUniform3f(lightAmbientColor, 0.2, 0.2, 0.2);
+    GLuint lightDiffuseColor = glGetUniformLocation(self.gl_effect.program, "light.diffuseColor");
+    glUniform3f(lightDiffuseColor, 0.5, 0.5, 0.5);
+    GLuint lightSpecularColor = glGetUniformLocation(self.gl_effect.program, "light.specularColor");
+    glUniform3f(lightSpecularColor, 1.0, 1.0, 1.0);
+
+    //物体材质
+    GLuint materialAmbientColor = glGetUniformLocation(self.gl_effect.program, "material.ambientColor");
+    glUniform3f(materialAmbientColor, 1.0, 0.5, 0.3);
+    GLuint materialDiffuseColor = glGetUniformLocation(self.gl_effect.program, "material.diffuseColor");
+    glUniform3f(materialDiffuseColor, 1.0, 0.5, 0.3);
+    GLuint materialSpecularColor = glGetUniformLocation(self.gl_effect.program, "material.specularColor");
+    glUniform3f(materialSpecularColor, 0.5, 0.5, 0.5);
+    GLuint materialShininess = glGetUniformLocation(self.gl_effect.program, "material.shininess");
+    glUniform1f(materialShininess, 32.0);
+
     //摄像机位置
     GLuint cameraPositionBuffer = glGetUniformLocation(self.gl_effect.program, "cameraPosition");
-    glUniform3f(cameraPositionBuffer, 0.0, 0.0, 0.0);
+    glUniform3f(cameraPositionBuffer, -1.0, 1.0, 0.0);
     
     GLuint positionBuffer = glGetAttribLocation(self.gl_effect.program, "position");
     [self.vertexAttribute enableVertexBufferWithAttribArray:positionBuffer size:3 stride:sizeof(GLfloat) * 8 vertexOffset:0 + NULL];
